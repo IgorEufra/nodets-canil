@@ -10,7 +10,7 @@
     "start-dev": "nodemon -e ts,json,mustache src/server.ts",
     "start": "node dist/server.js",
     "build":"npm install && tsc",
-    "postinstall": "npm install && tsc && copyfiles -u 1 src/**/*.mustache dist/"
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/"
   },
   "repository": {
     "type": "git",
