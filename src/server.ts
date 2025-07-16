@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import mustache from 'mustache-express';
 import path from 'path';
 import mainRoutes from './routes/index';
-
+import { Request, Response } from 'express';
 dotenv.config();
 
 const server = express();
@@ -17,7 +17,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 // Rotas
 server.use(mainRoutes);
 
-server.use((req,res) => {
+server.use((req:Request,res:Response) => {
     res.render('pages/404')
 });
 
